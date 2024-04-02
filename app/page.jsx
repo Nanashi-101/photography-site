@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <div>
       <Navbar/>
-      <Hero heading={"NexCap Studio "} message={"Capture the moments that tell your story, frame by frame, with our lens of artistry and passion."}/>
+      <Hero heading={"NeXCap Studio "} message={"Capture the moments that tell your story, frame by frame, with our lens of artistry and passion."}/>
     </div>
   );
 }
