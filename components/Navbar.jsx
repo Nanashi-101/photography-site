@@ -25,7 +25,16 @@ const Navbar = () => {
       }
     }
     window.addEventListener("scroll", changeColor);
+
+    window.addEventListener("resize", () => {
+      const mobile_Nav = document.getElementById('mobile-nav');
+      mobile_Nav.classList.add('hidden');
+    });
+
+    const bodyStyle = document.body.style;
+    bodyStyle.overflow = mobileNav ? 'hidden' : 'auto';
   },[]);
+
 
   return (
     <div
@@ -40,16 +49,16 @@ const Navbar = () => {
           style={{ color: `${textColor}` }}
           className="hidden sm:flex uppercase"
         >
-          <li className="p-4 custom-hover">
+          <li className="p-4 font-medium hover:tracking-wider ease-in duration-150">
             <Link href="/">Home</Link>
           </li>
-          <li className="p-4">
+          <li className="p-4 font-medium hover:tracking-wider ease-in duration-150">
             <Link href="/gallery">Gallery</Link>
           </li>
-          <li className="p-4">
+          <li className="p-4 font-medium hover:tracking-wider ease-in duration-150">
             <Link href="/work">Work</Link>
           </li>
-          <li className="p-4">
+          <li className="p-4 font-medium hover:tracking-wider ease-in duration-150">
             <Link href="/contact">Contact</Link>
           </li>
         </ul>
@@ -72,9 +81,10 @@ const Navbar = () => {
         <div
           className={
             mobileNav
-              ? "sm:hidden absolute top-0 bottom-0 left-0 right-0 flex justify-center items-center w-full h-screen bg-black text-center ease-in duration-300"
+              ? "sm:hidden absolute top-0 bottom-0 left-0 right-0 flex justify-center items-center w-full h-screen overflow-hidden bg-black/70 text-center ease-in duration-300 backdrop-blur-md"
               : "sm:hidden absolute top-0 bottom-0 left-[-100%] right-0 flex justify-center items-center w-full h-screen bg-black text-center ease-in duration-300"
           }
+          id="mobile-nav"
         >
           <Link href="/" className="absolute top-[1.2rem] font-bold text-4xl">
             NeXCap
