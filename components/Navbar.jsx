@@ -1,49 +1,96 @@
-import React from "react";
+//! This line is important in Next.js-13+ to avoid importing the component on the server side
+"use client";
+
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 
 const Navbar = () => {
+  const [mobileNav, setMobileNav] = useState(false);
+  const [color, setColor] = useState("transparent");
+  const [textColor, setTextColor] = useState("white");
+  const handleNav = () => {
+    setMobileNav(!mobileNav);
+  };
+
+  useEffect(() => {
+    const changeColor = () => {
+      if(window.scrollY > 90){
+        setColor("white");
+        setTextColor("black");
+      }
+      else{
+        setColor("transparent");
+        setTextColor("white");
+      }
+    }
+    window.addEventListener("scroll", changeColor);
+  },[]);
+
   return (
-    <div className="fixed left-0 top-0 w-full z-10 ease-in">
+    <div
+      style={{ backgroundColor: `${color}` }}
+      className="fixed left-0 top-0 w-full z-10 ease-in"
+    >
       <div className="max-w-[1240px] m-auto flex justify-between items-center p-4 text-white">
-        <Link href="/" className="flex">
-          <h1 className="text-4xl font-extrabold ">NeXCap</h1>
+        <Link style={{ color: `${textColor}` }} href="/" className="flex">
+          <h1 className="text-4xl font-bold ">NeXCap</h1>
         </Link>
-        <ul className="hidden">
-          <li>
+        <ul
+          style={{ color: `${textColor}` }}
+          className="hidden sm:flex uppercase"
+        >
+          <li className="p-4 custom-hover">
             <Link href="/">Home</Link>
           </li>
-          <li>
+          <li className="p-4">
             <Link href="/gallery">Gallery</Link>
           </li>
-          <li>
+          <li className="p-4">
             <Link href="/work">Work</Link>
           </li>
-          <li>
+          <li className="p-4">
             <Link href="/contact">Contact</Link>
           </li>
         </ul>
         {/* Mobile Button */}
-        <div className="">
-          <AiOutlineMenu size={20} />
+        <div
+          onClick={handleNav}
+          className="block sm:hidden z-10 cursor-pointer"
+        >
+          {!mobileNav ? (
+            <AiOutlineMenu
+              size={30}
+              className="mt-2"
+              style={{color: `${textColor}`}}
+            />
+          ) : (
+            <AiOutlineClose size={30}/>
+          )}
         </div>
         {/* Mobile Navbar */}
-        <div className="">
-          <Link href="/">
-            <h1>NC</h1>
+        <div
+          className={
+            mobileNav
+              ? "sm:hidden absolute top-0 bottom-0 left-0 right-0 flex justify-center items-center w-full h-screen bg-black text-center ease-in duration-300"
+              : "sm:hidden absolute top-0 bottom-0 left-[-100%] right-0 flex justify-center items-center w-full h-screen bg-black text-center ease-in duration-300"
+          }
+        >
+          <Link href="/" className="absolute top-[1.2rem] font-bold text-4xl">
+            NeXCap
           </Link>
           <div>
-            <ul>
-              <li>
+            <ul className="uppercase">
+              <li className="p-4 text-xl hover:text-gray-400 hover:tracking-wider hover:scale-105 duration-300">
                 <Link href="/">Home</Link>
               </li>
-              <li>
+              <li className="p-4 text-xl hover:text-gray-400 hover:tracking-wider hover:scale-105 duration-300">
                 <Link href="/gallery">Gallery</Link>
               </li>
-              <li>
+              <li className="p-4 text-xl hover:text-gray-400 hover:tracking-wider hover:scale-105 duration-300">
                 <Link href="/work">Work</Link>
               </li>
-              <li>
+              <li className="p-4 text-xl hover:text-gray-400 hover:tracking-wider hover:scale-105 duration-300">
                 <Link href="/contact">Contact</Link>
               </li>
             </ul>
