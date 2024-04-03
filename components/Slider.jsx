@@ -11,6 +11,7 @@ const Slider = ({ slides }) => {
   const nextSlide = () => {
     setCurrent(current === length - 1 ? 0 : current + 1);
   };
+
   // Moving on to the previous slide
   const prevSlide = () => {
     setCurrent(current === length - 1 ? length - 1 : current - 1);
@@ -22,9 +23,10 @@ const Slider = ({ slides }) => {
   }
 
   return (
-    <div id="gallery">
+    <div id="gallery" className="max-w-[1240px] mx-auto">
       <h1 className="text-center font-semibold  text-4xl py-4">Gallery</h1>
-      <div className="">
+      <p className="text-center text-sm sm:text-md md:text-xl lg:text-2xl font-medium">Discover moments frozen in time, each frame a window to a world of wonder.</p>
+      <div className="relative flex justify-center p-4">
         {slides.map((slide, index) => {
           return (
             <div
@@ -35,25 +37,26 @@ const Slider = ({ slides }) => {
                   : "opacity-0"
               }
             >
-              <div className="relative flex justify-center p-4">
-                <FaArrowCircleLeft
-                  size={50}
-                  className="absolute top-[50%] left-[30px] cursor-pointer text-white/70 select-none z-[2]"
+              <FaArrowCircleLeft
+                size={50}
+                className="absolute top-[45%] left-[30px] cursor-pointer text-white/90 select-none z-[2]"
+                onClick={prevSlide}
+              />
+              {index === current && (
+                <Image
+                  src={slide.image}
+                  alt={slide.alt}
+                  width={1400}
+                  height={600}
+                  objectFit="cover"
+                  className="rounded-2xl shadow-lg shadow-black"
                 />
-                {index === current && (
-                  <Image
-                    src={slide.image}
-                    alt={slide.alt}
-                    width={1440}
-                    height={600}
-                    objectFit="cover"
-                  />
-                )}
-                <FaArrowCircleRight
-                  size={50}
-                  className="absolute top-[50%] right-[30px] cursor-pointer text-white/70 select-none z-[2]"
-                />
-              </div>
+              )}
+              <FaArrowCircleRight
+                size={50}
+                className="absolute top-[45%] right-[30px] cursor-pointer text-white/90 select-none z-[2]"
+                onClick={nextSlide}
+              />
             </div>
           );
         })}

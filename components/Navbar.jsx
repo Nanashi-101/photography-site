@@ -15,33 +15,34 @@ const Navbar = () => {
 
   useEffect(() => {
     const changeColor = () => {
-      if(window.scrollY > 90){
+      if (window.scrollY > 100) {
         setColor("white");
         setTextColor("black");
-      }
-      else{
+      } else {
         setColor("transparent");
         setTextColor("white");
       }
-    }
+    };
     window.addEventListener("scroll", changeColor);
 
     window.addEventListener("resize", () => {
-      const mobile_Nav = document.getElementById('mobile-nav');
-      mobile_Nav.classList.add('hidden');
+      const mobile_Nav = document.getElementById("mobile-nav");
+      mobile_Nav.classList.add("hidden");
     });
 
     const bodyStyle = document.body.style;
-    bodyStyle.overflow = mobileNav ? 'hidden' : 'auto';
-  },[]);
-
+    bodyStyle.overflow = mobileNav ? "hidden" : "auto";
+  }, []);
 
   return (
     <div
-      style={{ backgroundColor: `${color}` }}
+      style={{
+        backgroundColor: `${color}`,
+        transition: "background-color 0.5s ease-in-out",
+      }}
       className="fixed left-0 top-0 w-full z-10 ease-in"
     >
-      <div className="max-w-[1240px] m-auto flex justify-between items-center p-4 text-white">
+      <div className="max-w-[1240px] m-auto flex justify-between items-center p-2 text-white">
         <Link style={{ color: `${textColor}` }} href="/" className="flex">
           <h1 className="text-4xl font-bold ">NeXCap</h1>
         </Link>
@@ -71,17 +72,17 @@ const Navbar = () => {
             <AiOutlineMenu
               size={30}
               className="mt-2"
-              style={{color: `${textColor}`}}
+              style={{ color: `${textColor}` }}
             />
           ) : (
-            <AiOutlineClose size={30}/>
+            <AiOutlineClose size={30} />
           )}
         </div>
         {/* Mobile Navbar */}
         <div
           className={
             mobileNav
-              ? "sm:hidden absolute top-0 bottom-0 left-0 right-0 flex justify-center items-center w-full h-screen overflow-hidden bg-black/70 text-center ease-in duration-300 backdrop-blur-md"
+              ? "sm:hidden absolute top-0 bottom-0 left-0 right-0 flex justify-center items-center w-full h-screen overflow-hidden bg-black/80 text-center ease-in duration-300 backdrop-blur-md"
               : "sm:hidden absolute top-0 bottom-0 left-[-100%] right-0 flex justify-center items-center w-full h-screen bg-black text-center ease-in duration-300"
           }
           id="mobile-nav"
