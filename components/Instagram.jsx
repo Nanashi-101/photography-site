@@ -11,11 +11,16 @@ import InstaImage from './instaImage';
 const instagram = () => {
 //   const images = [img1, img2, img3, img4, img5, img6];
   return (
-    <div>
-      <p>Follow Me On Instagram</p>
-      <p><AiFillInstagram/>- @NeX._.Cap</p>
-      <div>
+    <div className='max-w-[1240px] mx-auto text-center py-24'>
+      <p className='text-2xl font-bold '>Follow Me On Instagram</p>
+      <p className='flex justify-center items-center gap-2 pt-2 pb-4 text-lg font-semibold'>@NeX._.Cap</p>
+      <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-2 p-4'>
         <InstaImage socialImage={img1}/>
+        <InstaImage socialImage={img2}/>
+        <InstaImage socialImage={img3}/>
+        <InstaImage socialImage={img4}/>
+        <InstaImage socialImage={img5}/>
+        <InstaImage socialImage={img6}/>
       </div>
     </div>
   )
