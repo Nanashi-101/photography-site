@@ -8,6 +8,8 @@ import img6 from '../public/images/ig_image6.jpg';
 import { AiFillInstagram } from 'react-icons/ai';
 import InstaImage from './instaImage';
 
+//Todo: Replace the images 1,2 and 5 from the github of the creator
+
 const instagram = () => {
 //   const images = [img1, img2, img3, img4, img5, img6];
   return (

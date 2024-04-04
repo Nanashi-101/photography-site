@@ -7,7 +7,12 @@ const workSecondaryImg = ({ source }) => {
       <Image
         src={source}
         alt="/"
-        fill="responsive"
+        width={215}
+        height={217}
+        style={{
+          minWidth: "100%",
+          height: "100%",
+        }}
         objectFit="cover"
       />
     </div>

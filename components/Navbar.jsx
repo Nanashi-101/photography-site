@@ -92,16 +92,16 @@ const Navbar = () => {
           </Link>
           <div>
             <ul className="uppercase">
-              <li className="p-4 text-xl hover:text-gray-400 hover:tracking-wider hover:scale-105 duration-300">
+              <li onClick={handleNav} className="p-4 text-xl hover:text-gray-400 hover:tracking-wider hover:scale-105 duration-300">
                 <Link href="/">Home</Link>
               </li>
-              <li className="p-4 text-xl hover:text-gray-400 hover:tracking-wider hover:scale-105 duration-300">
+              <li onClick={handleNav} className="p-4 text-xl hover:text-gray-400 hover:tracking-wider hover:scale-105 duration-300">
                 <Link href="/#gallery">Gallery</Link>
               </li>
-              <li className="p-4 text-xl hover:text-gray-400 hover:tracking-wider hover:scale-105 duration-300">
+              <li onClick={handleNav} className="p-4 text-xl hover:text-gray-400 hover:tracking-wider hover:scale-105 duration-300">
                 <Link href="/work">Work</Link>
               </li>
-              <li className="p-4 text-xl hover:text-gray-400 hover:tracking-wider hover:scale-105 duration-300">
+              <li onClick={handleNav} className="p-4 text-xl hover:text-gray-400 hover:tracking-wider hover:scale-105 duration-300">
                 <Link href="/contact">Contact</Link>
               </li>
             </ul>
