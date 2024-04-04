@@ -1,3 +1,4 @@
+import Footer from '@/components/Footer'
 import Hero from '@/components/Hero'
 import Navbar from '@/components/Navbar'
 import Portfolio from '@/components/Portfolio'
@@ -9,6 +10,7 @@ const page = () => {
       <Navbar />
       <Hero heading='My Work' message='Capturing moments, crafting memories ~ "one click at a time". Come have a look!' option='See more' idScroll='#portfolio'/>
       <Portfolio/>
+      <Footer />
     </div>
   )
 }

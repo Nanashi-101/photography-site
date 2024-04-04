@@ -9,7 +9,7 @@ const Hero = ({heading, message, option, idScroll}) => {
       <div className="p-5 text-white z-[2]">
         <h2 className='text-5xl font-bold'>{heading}</h2>
         <p className='text-xl py-6 max-w-[700px]'>{message}</p>
-        <Link href={`/${idScroll}`} className='flex justify-center w-fit px-8 py-2 border uppercase hover:tracking-[0.08rem] duration-300 font-semibold'>
+        <Link href={idScroll} className='flex justify-center w-fit px-8 py-2 border uppercase hover:tracking-[0.08rem] duration-300 font-semibold'>
           {option}
         </Link>
       </div>

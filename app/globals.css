@@ -11,6 +11,10 @@
     .overlay{
         @apply absolute top-0 left-0 bottom-0 right-0 bg-black/70 z-[2];
     }
+
+    .input-style{
+        @apply border shadow-lg rounded-lg p-3 w-full placeholder:font-semibold text-lg font-semibold placeholder:text-black/40;
+    }
 }
 
 .custom-img{
