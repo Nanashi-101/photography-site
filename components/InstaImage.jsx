@@ -7,6 +7,8 @@ const instaImage = ({ socialImage }) => {
       <Image
         src={socialImage}
         alt="/"
+        width={300}
+        height={300}
         style={{ minWidth: "100%", height: "100%" }}
       />
       {/* Overlay */}

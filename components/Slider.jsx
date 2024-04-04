@@ -14,7 +14,7 @@ const Slider = ({ slides }) => {
 
   // Moving on to the previous slide
   const prevSlide = () => {
-    setCurrent(current === length - 1 ? length - 1 : current - 1);
+    setCurrent(current === 0 ? length - 1 : current - 1);
   };
 
   //Basic checking to ensure that the slides are not empty

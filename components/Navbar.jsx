@@ -32,7 +32,7 @@ const Navbar = () => {
 
     const bodyStyle = document.body.style;
     bodyStyle.overflow = mobileNav ? "hidden" : "auto";
-  }, []);
+  }, [mobileNav]);
 
   return (
     <div
