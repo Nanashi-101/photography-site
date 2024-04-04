@@ -4,7 +4,7 @@ import Link from 'next/link'
 const Contact = () => {
   return (
     <div className='max-w-[1240px] m-auto p-4 h-screen' id='contact'>
-      <h1 className='text-center font-bold text-2xl p-4'>Let's Work Together</h1>
+      <h1 className='text-center font-bold text-2xl p-4'>Lets Work Together</h1>
       <form action="" className="max-w-[600px] m-auto ">
         <div className="grid grid-cols-2 gap-2">
             <input type="text" placeholder="Name" className="input-style"/>

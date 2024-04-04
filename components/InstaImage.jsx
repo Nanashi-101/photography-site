@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import { FaInstagram } from "react-icons/fa";
-const instaImage = ({ socialImage }) => {
+const InstaImage = ({ socialImage }) => {
   return (
     <div className="relative">
       <Image
@@ -21,4 +21,4 @@ const instaImage = ({ socialImage }) => {
   );
 };
 
-export default instaImage;
+export default InstaImage;

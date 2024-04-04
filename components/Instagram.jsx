@@ -1,11 +1,5 @@
 import React from 'react'
-// import img1 from '../public/images/ig_image1.jpg';
-// import img2 from '../public/images/ig_image2.jpg';
-// import img3 from '../public/images/ig_image3.jpg';
-// import img4 from '../public/images/ig_image4.jpg';
-// import img5 from '../public/images/ig_image5.jpg';
-// import img6 from '../public/images/ig_image6.jpg';
-import InstaImage from '@/InstaImage';
+import InstaImage from './InstaImage'
 
 const instagram = () => {
 //   const images = [img1, img2, img3, img4, img5, img6];
